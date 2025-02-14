@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: #282828;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 28px;
+            color: #ffcc00;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .options a {
+            display: block;
+            background: #ffcc00;
+            color: #1e1e1e;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .options a:hover {
+            background: #e6b800;
+        }
+        .end-message {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff6666;
+        }
+        .restart {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .restart:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{.Title}}</h1>
+        {{range .Story}}
+        <p>{{.}}</p>
+        {{end}}
+
+        {{if .Options}}
+        <ul class="options">
+            {{range .Options}}
+            <li><a href="/story/{{.Arc}}">{{.Text}}</a></li>
+            {{end}}
+        </ul>
+        {{else}}
+        <p class="end-message">The End.</p>
+        <a class="restart" href="/story/">Restart Story</a>
+        {{end}}
+    </div>
+</body>
+</html>

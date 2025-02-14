@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"urlShortner/handlers"
 	"urlShortner/routes"
+
+	_ "github.com/lib/pq"
 )
 
 type ProgramParams struct {
