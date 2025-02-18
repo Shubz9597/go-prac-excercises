@@ -9,7 +9,7 @@
             "type": "go",
             "request": "launch",
             "mode": "auto",
-            "program": "html-link-parser/main.go"
+            "program": "sitemap-builder/main.go"
         }
     ]
 }
