@@ -117,7 +117,6 @@ func gameNew(player *Player, cards *[]deck.Card, scanner *bufio.Scanner) {
 			return
 		} else if currentPoints > 21 {
 			fmt.Println("You busted! You lose!")
-			player.Points -= player.BetAmount
 			return
 		} else {
 			for {
